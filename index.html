@@ -19,75 +19,36 @@
  <!-- <meta http-equiv="refresh" content="5" /> -->
 
   <style>
-
-       #map {
-         position: absolute;
-         left: 100px;
-         top: 100px;
-
-         width: 50%;
-       }
-
-       .draggable .resizeable {
-         display: inline;
-         position: absolute;
-       }
-
-       #posSaver {
-           margin: 30px;
-       }
-
   </style>
 
   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
   <link rel="stylesheet" type="text/css" href="http://code.jquery.com/ui/1.9.2/themes/base/jquery-ui.css">
-  <script>
-
-      $( function() {
-            $(".draggable" ).draggable();
-
-            $(".resizeable" ).resizable();
-
-            $("#map" ).resizable();
-
-            $('#posSaver').click(
-                function() 
-                {
-                  $(".draggable").each( 
-                    function() 
-                    { 
-                      console.log($(this).text()); 
-                    }
-                  );
-                }
-            );
-         } 
-      );
-
-  </script>
+  
 
 </head>
 
 <body>
 
 <button id="posSaver" class="btn btn-default">Save position</button>
+<button id="posLoader" class="btn btn-default">Load position</button>
 
-<div class="draggable">
+<div class="draggable" id="mapbox">
+    mapbox
     <img id="map" src="rooms/map-min.png">
 </div>
 
-<div class="draggable">
+<div class="draggable" id="301">
     301
     <img class="resizeable" src="rooms/r-301-30.png">
 </div>
 
-<div class="draggable">
+<div class="draggable" id="311">
     311
     <img class="resizeable" src="rooms/r-311-active.png">
 </div>
 
-<div class="draggable">
+<div class="draggable" id="304">
     304
     <img class="resizeable" src="rooms/r-304-200.png">
 </div>
