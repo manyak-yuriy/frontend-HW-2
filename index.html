@@ -5,12 +5,12 @@
   <link rel="icon" href="favicon.ico?dt" type="image/x-icon"/>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://bootswatch.com/spacelab/bootstrap.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <link rel="stylesheet" href="styles.css">
 
-  <script src="script.js" type="text/javascript"></script>
+  
 
   <meta charset="UTF-8">
   <meta name="description" content="this is about pets" />
@@ -21,11 +21,15 @@
   <style>
   </style>
 
-  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
   <script src="lawnchair.js"></script>
   <link rel="stylesheet" type="text/css" href="http://code.jquery.com/ui/1.9.2/themes/base/jquery-ui.css">
+
+  <script src="script.js" type="text/javascript"></script>
   
+  <script>    
+      $('[data-toggle="popover"]').popover(); 
+  </script>
 
 </head>
 
@@ -37,10 +41,13 @@
     <button id="captionHide" class="btn btn-default">Hide captions</button>
 </div> 
 
-    <h3>Drag and resize images using your mouse</h3>
-<div style="position: relative">
+<h3>Drag and resize images using your mouse</h3>
+
+
+
+<div>
     <div class="draggable" id="mapbox">
-        <img id="map" src="rooms/map-min.png">
+        <img id="map" src="rooms/map-min.png" data-toggle="popover" title="Popover Header" data-content="Some content inside the popover">
         <!--<span class="caption">mapbox</span> -->
     </div>
 
