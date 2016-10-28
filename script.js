@@ -1,18 +1,17 @@
 var posData = {};
 
+var resizeOptions = {
+                        autoHide: true, ghost: true
+                    }
 $(  function() 
     {
            
 
             $(".draggable" ).draggable();
 
-            $(".resizeable" ).resizable({
-                autoHide: true, ghost: true
-            });
+            $(".resizeable" ).resizable(resizeOptions);
 
-            $("#map" ).resizable({
-                autoHide: true, ghost: true
-            });
+            $("#map" ).resizable(resizeOptions);
 
             $('#posSaver').click(
                 function() 
@@ -73,33 +72,29 @@ $(  function()
                 {
 
                   $.get("https://api.myjson.com/bins/19hhe", function(data, textStatus, jqXHR) {
-                      alert(textStatus);
-                      posData = data;
-                      alert(posdata +"");
+                        //alert(textStatus);
+                        posData = data;
+                        alert(JSON.stringify(posData));
+
+                        $(".draggable").each( 
+                            function() 
+                            { 
+                                //console.log($(this).text()); 
+                                var key = $(this).attr("id");
+                                
+
+                                $(this).css("left", posData[key]["left"]);
+                                $(this).css("top", posData[key]["top"]);
+
+                                $img = $(this).find("img");
+                                $img.resizable( "destroy" ).width(posData[key]["width"]).resizable(resizeOptions); 
+                                $img.resizable( "destroy" ).height(posData[key]["height"]).resizable(resizeOptions);  
+                            }
+                        );
+
+
                   });
-
                   
-                  
-                  $(".draggable").each( 
-                    function() 
-                    { 
-                      //console.log($(this).text()); 
-                      var key = $(this).attr("id");
-                      
-
-                      $(this).css("left", posData[key]["left"]);
-                      $(this).css("top", posData[key]["top"]);
-
-                      $img = $(this).find("img");
-                      $img.width(posData[key]["width"]).resizable( "destroy" ).resizable(); 
-                      $img.height(posData[key]["height"]).resizable( "destroy" ).resizable();  
-                      
-                    }
-                  );
-
-                  
-
-
                   console.log();
                 }
 
