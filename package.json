@@ -12,6 +12,7 @@
     "lite-server": "^2.2.2"
   },
   "dependencies": {
+    "electron-json-storage": "^2.0.3",
     "lite-server": "^2.2.2"
   },
   "description": ""

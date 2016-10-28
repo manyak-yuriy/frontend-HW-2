@@ -6,9 +6,13 @@ $(  function()
 
             $(".draggable" ).draggable();
 
-            $(".resizeable" ).resizable();
+            $(".resizeable" ).resizable({
+                autoHide: true, ghost: true
+            });
 
-            $("#map" ).resizable();
+            $("#map" ).resizable({
+                autoHide: true, ghost: true
+            });
 
             $('#posSaver').click(
                 function() 
@@ -22,12 +26,42 @@ $(  function()
                       posData[key] = {
                                          left: $(this).css("left"), 
                                          top: $(this).css("top"), 
-                                         width: $(this).css("width"), 
-                                         height: $(this).css("height")
+                                         width: $(this).find("img").width(), 
+                                         height: $(this).find("img").height()
                                      };
                     }
                   );
 
+                   
+                  var jsonData = JSON.stringify(posData);
+/*
+                  $.ajax({
+                        url:"https://api.myjson.com/bins",
+                        type:"POST",
+                        data: jsonData,
+                        contentType:"application/json; charset=utf-8",
+                        dataType:"json",
+                        success: function(data, textStatus, jqXHR){
+                            var str = data["uri"];
+                            var ind = str.lastIndexOf("/");
+                            var id = str.substring(ind + 1); 
+                            alert(id);
+                        }
+                  });
+*/
+
+                  $.ajax({
+                        url:"https://api.myjson.com/bins/19hhe",
+                        type:"PUT",
+                        data: jsonData,
+                        contentType:"application/json; charset=utf-8",
+                        dataType:"json",
+                        success: function(data, textStatus, jqXHR){
+                            
+                            alert(jsonData);
+                        }
+                  });
+                
                   console.log();
                 }
 
@@ -37,6 +71,14 @@ $(  function()
             $('#posLoader').click(
                 function() 
                 {
+
+                  $.get("https://api.myjson.com/bins/19hhe", function(data, textStatus, jqXHR) {
+                      alert(textStatus);
+                      posData = data;
+                      alert(posdata +"");
+                  });
+
+                  
                   
                   $(".draggable").each( 
                     function() 
@@ -47,11 +89,16 @@ $(  function()
 
                       $(this).css("left", posData[key]["left"]);
                       $(this).css("top", posData[key]["top"]);
-                      $(this).css("width", posData[key]["width"]);
-                      $(this).css("height", posData[key]["height"]);
 
+                      $img = $(this).find("img");
+                      $img.width(posData[key]["width"]).resizable( "destroy" ).resizable(); 
+                      $img.height(posData[key]["height"]).resizable( "destroy" ).resizable();  
+                      
                     }
                   );
+
+                  
+
 
                   console.log();
                 }

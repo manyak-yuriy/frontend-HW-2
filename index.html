@@ -23,6 +23,7 @@
 
   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script src="lawnchair.js"></script>
   <link rel="stylesheet" type="text/css" href="http://code.jquery.com/ui/1.9.2/themes/base/jquery-ui.css">
   
 
@@ -30,12 +31,12 @@
 
 <body>
 
-    <button id="posSaver" class="btn btn-default">Save position</button>
-    <button id="posLoader" class="btn btn-default">Load position</button>
+    <button id="posSaver" class="btn btn-default">Save position to server</button>
+    <button id="posLoader" class="btn btn-default">Load position from server</button>
 
     <div class="draggable" id="mapbox">
         mapbox
-        <img id="map" src="rooms/map-min.png">
+        <img id="map" src="rooms/map-min.png?rnd=5">
     </div>
 
     <div class="draggable" id="301">
@@ -53,6 +54,7 @@
         <img class="resizeable" src="rooms/r-304-200.png">
     </div>
 
+    
 
 </body>
 </html>

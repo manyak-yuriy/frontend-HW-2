@@ -25,11 +25,11 @@ p { color: red; }
 table td {
     border: 1px solid black;
 }
-    
+/*  
 body {
     background-color: #FFF7e9;
 }
-
+*/
 h1 {
     font-weight: bold;
     border: 10px solid orange;
