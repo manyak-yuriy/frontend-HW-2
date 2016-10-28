@@ -90,6 +90,8 @@ var savePos =
 
 $(  function() 
     {
+            //$('[data-toggle="popover"]').popover(); 
+
             loadPos();
 
             $(".draggable" ).draggable();

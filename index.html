@@ -31,15 +31,17 @@
 
 <body>
 
+<div class="well">
     <button id="posSaver" class="btn btn-default">Save position to server</button>
     <button id="posLoader" class="btn btn-default">Load position from server</button>
     <button id="captionHide" class="btn btn-default">Hide captions</button>
+</div> 
 
-
-
+    <h3>Drag and resize images using your mouse</h3>
+<div style="position: relative">
     <div class="draggable" id="mapbox">
-        <span class="caption">mapbox</span>
-        <img id="map" src="rooms/map-min.png?rnd=5">
+        <img id="map" src="rooms/map-min.png">
+        <!--<span class="caption">mapbox</span> -->
     </div>
 
     <div class="draggable" id="301">
@@ -116,8 +118,9 @@
         <span class="caption">315</span>
         <img class="resizeable" src="rooms/r-315-30.png">
     </div>
+</div>
 
-    
+ 
 
 </body>
 </html>
