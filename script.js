@@ -26,8 +26,12 @@ var loadPos =
 
                                 $img = $(this).find("img");
                                 $img.resizable( "destroy" ).width(posData[key]["width"]).resizable(resizeOptions); 
-                                $img.resizable( "destroy" ).height(posData[key]["height"]).resizable(resizeOptions);  
+                                $img.resizable( "destroy" ).height(posData[key]["height"]).resizable(resizeOptions);
+
+
+                                $(this).css("visibility", "visible"); 
                             }
+                            
                         );
 
 
