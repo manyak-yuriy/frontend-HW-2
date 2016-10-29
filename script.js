@@ -12,6 +12,7 @@ var loadPos =
                         //alert(textStatus);
                         posData = data;
                         //alert(JSON.stringify(posData));
+                    // you can show images after success. in this case user will not be seeing all divs in one place
 
                         $(".draggable").each( 
                             function() 
