@@ -14,7 +14,10 @@
        button {
            margin: 30px;
        }
-
+       
+       .draggable {
+           visibility: hidden;
+       }
 
 
 

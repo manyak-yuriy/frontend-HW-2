@@ -12,6 +12,7 @@ var loadPos =
                         //alert(textStatus);
                         posData = data;
                         //alert(JSON.stringify(posData));
+                    // you can show images after success. in this case user will not be seeing all divs in one place
 
                         $(".draggable").each( 
                             function() 
@@ -25,8 +26,12 @@ var loadPos =
 
                                 $img = $(this).find("img");
                                 $img.resizable( "destroy" ).width(posData[key]["width"]).resizable(resizeOptions); 
-                                $img.resizable( "destroy" ).height(posData[key]["height"]).resizable(resizeOptions);  
+                                $img.resizable( "destroy" ).height(posData[key]["height"]).resizable(resizeOptions);
+
+
+                                $(this).css("visibility", "visible"); 
                             }
+                            
                         );
 
 
